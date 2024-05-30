@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\API\StudentController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -23,3 +24,10 @@ Route::post('/student/create',[StudentController::class,'store'])->name('student
 Route::get('/student/show/{id}',[StudentController::class,'show'])->name('student.show');
 Route::put('/student/update/{id}',[StudentController::class,'update'])->name('student.update');
 Route::delete('/student/delete/{id}',[StudentController::class,'destroy'])->name('student.destroy');
+
+
+Route::get('/category/list',[CategoryController::class,'index'])->name('category.list');
+Route::post('/category/create',[CategoryController::class,'store'])->name('category.create');
+Route::get('/category/show/{id}',[CategoryController::class,'show'])->name('category.show');
+Route::put('/category/update/{id}',[CategoryController::class,'update'])->name('category.update');
+Route::delete('/category/delete/{id}',[CategoryController::class,'destroy'])->name('category.destroy');
